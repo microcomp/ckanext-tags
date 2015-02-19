@@ -1,0 +1,39 @@
+{% ckan_extends %}
+
+
+
+{% block primary_content_inner %}
+  
+  {% block package_description %}
+    {{ super()}}
+  {% endblock %}
+
+  {% block package_resources %}
+   {{ super()}}
+  {% endblock %}
+
+  {% block package_tags %}
+    {{ super()}}
+  {% endblock %}
+
+  {% block package_additional_info %}
+
+    {% snippet "package/snippets/additional_info.html", pkg_dict=pkg %}
+  {% endblock %}
+<form method="post" action="/tags/new">
+    <label for="tag"> {{_('Recommend new tag')}}</label>
+    <input name="tag" id="tag" type='text' style="margin-top: 0.7em;" placeholder='{{_("Separated with ', ' e.g. aaa, bbb")}}'> </input>
+    <input name='dataset_id' type='text' value='{{c.pkg.id}}' style="display:none"> </input>
+    <button type='submit' value='submit' class='btn btn-primary'  >{{_('Insert')}}</button>
+</form>
+
+{% endblock %}
+{% block secondary_content %}
+  {{ super() }}
+
+  {% set dataset_extent = h.get_pkg_dict_extra(c.pkg_dict, 'spatial', '') %}
+  {% if dataset_extent %}
+    {% snippet "spatial/snippets/dataset_map_sidebar.html", extent=dataset_extent %}
+  {% endif %}
+
+{% endblock %}
