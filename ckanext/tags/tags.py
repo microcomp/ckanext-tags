@@ -60,21 +60,19 @@ def accept_tag(context, data_dict):
     create_related_tags_table(context)
     info = db.RelatedTags.get(**data_dict)[0]
     info.status = 'accepted'
-    #add to tags!!!3
 
-    is_in = model.Session.query(model.Tag).filter(model.Tag.name == info.tag).first()
 
-    if is_in is None:
-        data_to_commit = model.tag.Tag()
-        data_to_commit.id =  unicode(uuid.uuid4())
-        data_to_commit.name = info.tag
-        model.Session.add(data_to_commit)
-        model.Session.commit()
-        #model.package.Package().add_tag(data_to_commit)
-    #TODO... hozzaadni a datasethez
-    info.save()
+    rev = ckan.model.repo.new_revision()
+
     session = context['session']
+    dataset_name = model.Session.query(model.Package).filter(model.Package.id== info.dataset_id).first().name
+    package = ckan.model.Package.get(dataset_name)
+    package.add_tags([ckan.model.Tag(info.tag)])
+
+    info.save()
+    
     session.commit()
+
     return {"status":"success"}
     
 @ckan.logic.side_effect_free
