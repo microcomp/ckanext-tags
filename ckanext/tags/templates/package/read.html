@@ -20,13 +20,40 @@
 
     {% snippet "package/snippets/additional_info.html", pkg_dict=pkg %}
   {% endblock %}
+<script type="text/javascript">
+function(){
+  $this.hide();
+}
+</script>
+<style type="text/css">
+hr.show { display: block; height: 1px;
+    border: 0; border-top: 1px solid #A94043;
+    margin: 0em 0; padding: 0; }
+
+</style>
+
+  <div>
+    <hr class="show">
+      <h3 style="text-align: center;"> <button   id='show_tag_form' class='mybutton' onclick="$('#show_tag_form').hide();$('#tag_form').show();">{{_('Recommend new tag')}} </button></h3>
+
+    <form method="post" action="/tags/new" style="display: none" id="tag_form">
+    <label for="tag"> {{_('Recommend new tag')}}</label>
+    <input name="tag" id="tag" type='text' style="margin-top: 0.7em;" placeholder='{{_("Separated with ', ' e.g. aaa, bbb")}}'> </input>
+    <input name='dataset_id' type='text' value='{{c.pkg.id}}' style="display:none"> </input>
+    <button type='submit' value='submit' class='mybutton'  >{{_('Insert')}}</button>
+    <button class='mybutton'  onclick="$('#show_tag_form').show();$('#tag_form').hide();">{{_('Hide')}}</button>
+</form>
+    <hr class="show">
+  </div>
+  
+<noscript>
 <form method="post" action="/tags/new">
     <label for="tag"> {{_('Recommend new tag')}}</label>
     <input name="tag" id="tag" type='text' style="margin-top: 0.7em;" placeholder='{{_("Separated with ', ' e.g. aaa, bbb")}}'> </input>
     <input name='dataset_id' type='text' value='{{c.pkg.id}}' style="display:none"> </input>
     <button type='submit' value='submit' class='btn btn-primary'  >{{_('Insert')}}</button>
 </form>
-
+</noscript>
 {% endblock %}
 {% block secondary_content %}
   {{ super() }}
