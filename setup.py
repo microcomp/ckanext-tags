@@ -17,13 +17,26 @@ setup(
     license='',
     packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
     namespace_packages=['ckanext', 'ckanext.tags'],
+    package_data={'': [
+        'i18n/*/LC_MESSAGES/*.po',
+        'templates/*.html',\
+        'templates/admin/*.html',\
+        'templates/package/*.html']},
     include_package_data=True,
     zip_safe=False,
     install_requires=[
         # -*- Extra requirements: -*-
     ],
-    entry_points='''
-        [ckan.plugins]
-        tags=ckanext.tags.plugin:TagsPlugin
-    ''',
+    #entry_points='''
+    #    [ckan.plugins]
+    #    tags=ckanext.tags.plugin:TagsPlugin
+    #''',
+    entry_points={
+        'babel.extractors': [
+                    'ckan = ckan.lib.extract:extract_ckan',
+                    ],
+        'ckan.plugins' : [
+                    'tags =ckanext.tags.plugin:TagsPlugin',
+                    ]
+        }
 )
