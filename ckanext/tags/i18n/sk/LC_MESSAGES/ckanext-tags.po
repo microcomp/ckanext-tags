@@ -75,7 +75,7 @@ msgstr "Hľadať tag"
 
 #: ckanext/tags/templates/admin/tag_admin.html:112
 msgid "Apply"
-msgstr "Použi"
+msgstr "Použiť"
 
 #: ckanext/tags/templates/admin/tag_admin.html:113
 msgid "Reset"
