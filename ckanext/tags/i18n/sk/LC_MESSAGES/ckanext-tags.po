@@ -21,15 +21,15 @@ msgstr ""
 
 #: ckanext/tags/tags.py:96 ckanext/tags/tags.py:149 ckanext/tags/tags.py:161
 msgid "Not authorized to see this page"
-msgstr "Nemáte oprávnenie na zobrazenie tejto stránky"
+msgstr "NemÃ¡te oprÃ¡vnenie na zobrazenie tejto strÃ¡nky"
 
 #: ckanext/tags/tags.py:105
 msgid "wrong filter type"
-msgstr "nesprávny typ filtra"
+msgstr "nesprÃ¡vny typ filtra"
 
 #: ckanext/tags/tags.py:137
 msgid "Not authorized"
-msgstr "Neautentifikovanı"
+msgstr "NeautentifikovanÃ½"
 
 #: ckanext/tags/templates/admin/tag_admin.html:6
 #: ckanext/tags/templates/admin/tag_admin.html:10
@@ -39,70 +39,70 @@ msgstr "Tagy"
 
 #: ckanext/tags/templates/admin/tag_admin.html:21
 msgid "tags found"
-msgstr "nájdenıch tagov"
+msgstr "nÃ¡jdenÃ½ch tagov"
 
 #: ckanext/tags/templates/admin/tag_admin.html:47
 #: ckanext/tags/templates/admin/tag_admin.html:52
 msgid "Accept"
-msgstr "Akceptova"
+msgstr "AkceptovaÅ¥"
 
 #: ckanext/tags/templates/admin/tag_admin.html:48
 #: ckanext/tags/templates/admin/tag_admin.html:50
 msgid "Decline"
-msgstr "Odmietnu"
+msgstr "OdmietnuÅ¥"
 
 #: ckanext/tags/templates/admin/tag_admin.html:87
 msgid "Filter Results"
-msgstr "Vyfiltrované vısledky"
+msgstr "VyfiltrovanÃ© vÃ½sledky"
 
 #: ckanext/tags/templates/admin/tag_admin.html:92
 msgid "Filter by type"
-msgstr "Filtruj pod¾a typu"
+msgstr "Filtruj podÄ¾a typu"
 
 #: ckanext/tags/templates/admin/tag_admin.html:94
 msgid "All"
-msgstr "Všetky"
+msgstr "VÅ¡etky"
 
 #: ckanext/tags/templates/admin/tag_admin.html:95
 msgid "Accepted"
-msgstr "Akceptované"
+msgstr "AkceptovanÃ©"
 
 #: ckanext/tags/templates/admin/tag_admin.html:96
 msgid "Waiting"
-msgstr "Èakajúce"
+msgstr "ÄŒakajÃºce"
 
 #: ckanext/tags/templates/admin/tag_admin.html:97
 msgid "Declined"
-msgstr "Odmietnuté"
+msgstr "OdmietnutÃ©"
 
 #: ckanext/tags/templates/admin/tag_admin.html:102
 msgid "Search tag"
-msgstr "H¾ada tag"
+msgstr "HÄ¾adaÅ¥ tag"
 
 #: ckanext/tags/templates/admin/tag_admin.html:112
 msgid "Apply"
-msgstr "Poui"
+msgstr "PouÅ¾i"
 
 #: ckanext/tags/templates/admin/tag_admin.html:113
 msgid "Reset"
-msgstr "Zruši"
+msgstr "ZruÅ¡iÅ¥"
 
 #: ckanext/tags/templates/package/read.html:37
 #: ckanext/tags/templates/package/read.html:40
 #: ckanext/tags/templates/package/read.html:51
 msgid "Recommend new tag"
-msgstr "Navrhnú novı tag"
+msgstr "NavrhnÃºÅ¥ novÃ½ tag"
 
 #: ckanext/tags/templates/package/read.html:41
 #: ckanext/tags/templates/package/read.html:52
 msgid "Separated with ', ' e.g. aaa, bbb"
-msgstr "Oddelené ',' napr. ekonomika, financie"
+msgstr "OddelenÃ© ',' napr. ekonomika, financie"
 
 #: ckanext/tags/templates/package/read.html:43
 #: ckanext/tags/templates/package/read.html:54
 msgid "Insert"
-msgstr "Vloi"
+msgstr "VloÅ¾iÅ¥"
 
 #: ckanext/tags/templates/package/read.html:44
 msgid "Hide"
-msgstr "Skry"
+msgstr "SkryÅ¥"
