@@ -41,7 +41,7 @@ hr.show { display: block; height: 1px;
     <input name="tag" id="tag" type='text' style="margin-top: 0.7em;" placeholder='{{_("Separated with ', ' e.g. aaa, bbb")}}'> </input>
     <input name='dataset_id' type='text' value='{{c.pkg.id}}' style="display:none"> </input>
     <button type='submit' value='submit' class='mybutton'  >{{_('Insert')}}</button>
-    <button class='mybutton'  onclick="$('#show_tag_form').show();$('#tag_form').hide();">{{_('Hide')}}</button>
+    <a class='mybutton'  onclick="$('#show_tag_form').show();$('#tag_form').hide();" >{{_('Hide')}}</a>
 </form>
     <hr class="show">
   </div>

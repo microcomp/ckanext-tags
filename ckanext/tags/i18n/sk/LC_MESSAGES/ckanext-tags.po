@@ -31,12 +31,6 @@ msgstr "nesprávny typ filtra"
 msgid "Not authorized"
 msgstr "Neautentifikovaný"
 
-#: ckanext/tags/templates/admin/tag_admin.html:6
-#: ckanext/tags/templates/admin/tag_admin.html:10
-#: ckanext/tags/templates/admin/tag_admin.html:17
-msgid "Tags"
-msgstr "Tagy"
-
 #: ckanext/tags/templates/admin/tag_admin.html:21
 msgid "tags found"
 msgstr "nájdených tagov"

@@ -91,7 +91,7 @@ class TagsController(base.BaseController):
                    'user': c.user or c.author, 'auth_user_obj': c.userobj,
                    'for_view': True}
         try:
-            logic.check_access('app_editall', context)
+            logic.check_access('tags_admin', context)
         except logic.NotAuthorized:
             base.abort(401, base._('Not authorized to see this page'))
         data_dict = {}
@@ -144,7 +144,7 @@ class TagsController(base.BaseController):
                    'for_view': True}
         data_dict = {'id': base.request.params.get('id', '')}
         try:
-            logic.check_access('app_editall', context)
+            logic.check_access('tags_admin', context)
         except logic.NotAuthorized:
             base.abort(401, base._('Not authorized to see this page'))
 
@@ -156,7 +156,7 @@ class TagsController(base.BaseController):
                    'for_view': True}
         data_dict = {'id': base.request.params.get('id', '')}
         try:
-            logic.check_access('app_editall', context)
+            logic.check_access('tags_admin', context)
         except logic.NotAuthorized:
             base.abort(401, base._('Not authorized to see this page'))
 
