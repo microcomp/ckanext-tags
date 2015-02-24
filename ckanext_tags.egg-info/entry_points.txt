@@ -1,4 +1,0 @@
-
-        [ckan.plugins]
-        tags=ckanext.tags.plugin:TagsPlugin
-    
