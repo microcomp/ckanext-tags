@@ -67,8 +67,13 @@ def accept_tag(context, data_dict):
     session = context['session']
     dataset_name = model.Session.query(model.Package).filter(model.Package.id== info.dataset_id).first().name
     package = ckan.model.Package.get(dataset_name)
-    package.add_tags([ckan.model.Tag(info.tag)])
-
+    #package.add_tags([ckan.model.Tag(info.tag)])
+    ##dd =  {'id': dataset_name, 'tags':[{"name":ckan.model.Tag(info.tag).name}]}
+    pkg = toolkit.get_action("package_show")(context,{"id":dataset_name})
+    pkg["tags"].append({"name":ckan.model.Tag(info.tag).name})
+    toolkit.get_action("package_update")(context,pkg)
+    #for i in ckan.model.Tag(info.tag):
+        #package.tag_create(context, {'name':})
     info.save()
     
     session.commit()
@@ -101,9 +106,9 @@ class TagsController(base.BaseController):
         tags = admin_list_tags(context, data_dict)
         lng = len(tags)
         if len(status) > 0:
-        	if status not in ['waiting', 'accepted', 'declined']:
-        		base.abort(400, (_('wrong filter type')))
-        	tags = [x for x in tags if x.status == status]
+            if status not in ['waiting', 'accepted', 'declined']:
+                base.abort(400, (_('wrong filter type')))
+            tags = [x for x in tags if x.status == status]
         try:
             page = int(base.request.params.get('page', 1))
         except ValueError:
@@ -120,7 +125,7 @@ class TagsController(base.BaseController):
 
 
     def add_new(self):
-    	context = {'model': model, 'session': model.Session,
+        context = {'model': model, 'session': model.Session,
                    'user': c.user or c.author, 'auth_user_obj': c.userobj,
                    'for_view': True}
 
@@ -130,16 +135,18 @@ class TagsController(base.BaseController):
         
 
         if c.userobj:
-        	for i in tags:
-        		data_dict = {'tag': i, 'status': 'waiting', 'dataset_id': data['dataset_id']}
-        		new_related_tag(context, data_dict)
+            for i in tags:
+                j = i.strip()
+                if(j != "" or j != " "):
+                   data_dict = {'tag': j, 'status': 'waiting', 'dataset_id': data['dataset_id']}
+                   new_related_tag(context, data_dict)
         else:
-        	base.abort(401, base._('Not authorized'))
+            base.abort(401, base._('Not authorized'))
 
         return h.redirect_to(controller="package", action="read", id=data['dataset_id'])
 
     def accept(self):
-    	context = {'model': model, 'session': model.Session,
+        context = {'model': model, 'session': model.Session,
                    'user': c.user or c.author, 'auth_user_obj': c.userobj,
                    'for_view': True}
         data_dict = {'id': base.request.params.get('id', '')}
@@ -151,7 +158,7 @@ class TagsController(base.BaseController):
         accept_tag(context, data_dict)
         return h.redirect_to(controller = 'ckanext.tags.tags:TagsController', action='admin_list')
     def decline(self):
-    	context = {'model': model, 'session': model.Session,
+        context = {'model': model, 'session': model.Session,
                    'user': c.user or c.author, 'auth_user_obj': c.userobj,
                    'for_view': True}
         data_dict = {'id': base.request.params.get('id', '')}
