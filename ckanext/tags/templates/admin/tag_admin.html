@@ -91,21 +91,34 @@
       <div class="control-group">
         <label for="field-type">{{ _('Filter by type') }}</label>
         <select id="field-type" name="type">
-          <option value='{{c.actual}}'>
+         
             {%if c.actual == "waiting"%}
-              {{_("Waiting")}}
+             <option value="waiting" selected> {{_('Waiting') }}</option>
+             <option value="accepted"> {{_('Accepted') }}</option>
+             <option value="declined"> {{_('Declined') }}</option>
+             <option value="">{{ _('All') }}</option>
             {%elif c.actual == "accepted"%}
-              {{_("Accepted")}}
+            <option value="waiting"> {{_('Waiting') }}</option>
+             <option value="accepted" selected> {{_('Accepted') }}</option>
+             <option value="declined"> {{_('Declined') }}</option>
+             <option value="">{{ _('All') }}</option>
             {%elif c.actual == "declined"%}
-              {{_("Declined")}}
+            <option value="waiting"> {{_('Waiting') }}</option>
+            <option value="accepted"> {{_('Accepted') }}</option>
+            <option value="declined" selected> {{_('Declined') }}</option>
+            <option value="">{{ _('All') }}</option>
             {%else%}
-               {{_("All")}}
+            <option value="waiting"> {{_('Waiting') }}</option>
+            <option value="accepted"> {{_('Accepted') }}</option>
+            <option value="declined"> {{_('Declined') }}</option>
+            <option value="" selected>{{ _('All') }}</option>
+            
             {%endif%}
-          </option>
-          <option value="">{{ _('All') }}</option>
-          <option value="accepted"> {{_('Accepted') }}</option>
-          <option value="waiting"> {{_('Waiting') }}</option>
-          <option value="declined"> {{_('Declined') }}</option>
+          
+          
+          
+          
+          
         </select>
       </div>
 
