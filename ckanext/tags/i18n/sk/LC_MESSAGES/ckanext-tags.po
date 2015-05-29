@@ -21,6 +21,27 @@ msgstr ""
 
 #: ckanext/tags/tags.py:96 ckanext/tags/tags.py:149 ckanext/tags/tags.py:161
 msgid "Not authorized to see this page"
+<<<<<<< HEAD
+msgstr ""
+
+#: ckanext/tags/tags.py:105
+msgid "wrong filter type"
+msgstr ""
+
+#: ckanext/tags/tags.py:137
+msgid "Not authorized"
+msgstr ""
+
+#: ckanext/tags/templates/admin/tag_admin.html:6
+#: ckanext/tags/templates/admin/tag_admin.html:10
+#: ckanext/tags/templates/admin/tag_admin.html:17
+msgid "Tags"
+msgstr ""
+
+#: ckanext/tags/templates/admin/tag_admin.html:21
+msgid "tags found"
+msgstr ""
+=======
 msgstr "Nemáte oprávnenie na zobrazenie tejto stránky"
 
 #: ckanext/tags/tags.py:105
@@ -34,15 +55,59 @@ msgstr "Neautentifikovaný"
 #: ckanext/tags/templates/admin/tag_admin.html:21
 msgid "tags found"
 msgstr "nájdených tagov"
+>>>>>>> origin/master
 
 #: ckanext/tags/templates/admin/tag_admin.html:47
 #: ckanext/tags/templates/admin/tag_admin.html:52
 msgid "Accept"
+<<<<<<< HEAD
+msgstr ""
+=======
 msgstr "Akceptovať"
+>>>>>>> origin/master
 
 #: ckanext/tags/templates/admin/tag_admin.html:48
 #: ckanext/tags/templates/admin/tag_admin.html:50
 msgid "Decline"
+<<<<<<< HEAD
+msgstr ""
+
+#: ckanext/tags/templates/admin/tag_admin.html:87
+msgid "Filter Results"
+msgstr ""
+
+#: ckanext/tags/templates/admin/tag_admin.html:92
+msgid "Filter by type"
+msgstr ""
+
+#: ckanext/tags/templates/admin/tag_admin.html:94
+msgid "All"
+msgstr ""
+
+#: ckanext/tags/templates/admin/tag_admin.html:95
+msgid "Accepted"
+msgstr ""
+
+#: ckanext/tags/templates/admin/tag_admin.html:96
+msgid "Waiting"
+msgstr ""
+
+#: ckanext/tags/templates/admin/tag_admin.html:97
+msgid "Declined"
+msgstr ""
+
+#: ckanext/tags/templates/admin/tag_admin.html:102
+msgid "Search tag"
+msgstr ""
+
+#: ckanext/tags/templates/admin/tag_admin.html:112
+msgid "Apply"
+msgstr ""
+
+#: ckanext/tags/templates/admin/tag_admin.html:113
+msgid "Reset"
+msgstr ""
+=======
 msgstr "Odmietnuť"
 
 #: ckanext/tags/templates/admin/tag_admin.html:87
@@ -80,23 +145,41 @@ msgstr "Použiť"
 #: ckanext/tags/templates/admin/tag_admin.html:113
 msgid "Reset"
 msgstr "Zrušiť"
+>>>>>>> origin/master
 
 #: ckanext/tags/templates/package/read.html:37
 #: ckanext/tags/templates/package/read.html:40
 #: ckanext/tags/templates/package/read.html:51
 msgid "Recommend new tag"
+<<<<<<< HEAD
+msgstr ""
+=======
 msgstr "Navrhnúť nový tag"
+>>>>>>> origin/master
 
 #: ckanext/tags/templates/package/read.html:41
 #: ckanext/tags/templates/package/read.html:52
 msgid "Separated with ', ' e.g. aaa, bbb"
+<<<<<<< HEAD
+msgstr ""
+=======
 msgstr "Oddelené ',' napr. ekonomika, financie"
+>>>>>>> origin/master
 
 #: ckanext/tags/templates/package/read.html:43
 #: ckanext/tags/templates/package/read.html:54
 msgid "Insert"
+<<<<<<< HEAD
+msgstr ""
+
+#: ckanext/tags/templates/package/read.html:44
+msgid "Hide"
+msgstr ""
+
+=======
 msgstr "Vložiť"
 
 #: ckanext/tags/templates/package/read.html:44
 msgid "Hide"
 msgstr "Skryť"
+>>>>>>> origin/master

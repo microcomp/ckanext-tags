@@ -34,9 +34,9 @@
       {%for tag in c.content['tags'] %}
       <li class="dataset-item" style="padding-bottom: 2px; margin-bottom:2px;">
       	<div class="dataset-content">
-      		<h3 class="dataset-heading" style="padding-bottom: 2px; margin-bottom:2px;" ><a href="/dataset/{{tag.dataset_id}}" alt='dataset' >{{h.dataset_name(tag.dataset_id)}}</a></h3>
+      		<h3 class="dataset-heading" style="padding-bottom: 2px; margin-bottom:2px;" >{{h.dataset_name(tag.dataset_id)}}</h3>
       		<h4 style="padding: 2px; margin:2px;"> {{tag.status}}
-      			 
+      			<a href="/dataset/{{tag.dataset_id}}" alt='dataset' > URL </a>
 
       		</h4>
           
@@ -91,17 +91,6 @@
       <div class="control-group">
         <label for="field-type">{{ _('Filter by type') }}</label>
         <select id="field-type" name="type">
-          <option val='{{c.actual}}'>
-            {%if c.actual == "waiting"%}
-              {{_("Waiting")}}
-            {%elif c.actual == "accepted"%}
-              {{_("Accepted")}}
-            {%elif c.actual == "declined"%}
-              {{_("Declined")}}
-            {%else%}
-               {{_("All")}}
-            {%endif%}
-          </option>
           <option value="">{{ _('All') }}</option>
           <option value="accepted"> {{_('Accepted') }}</option>
           <option value="waiting"> {{_('Waiting') }}</option>
