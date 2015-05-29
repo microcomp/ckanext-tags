@@ -26,10 +26,24 @@ def dataset_name(id):
 
     dataset_name = model.Session.query(model.Package).filter(model.Package.id == id).first().title
     return dataset_name
+
+def dataset_name2(id):
+    context = {'model': model, 'session': model.Session,
+                   'user': c.user or c.author, 'auth_user_obj': c.userobj,
+                   'for_view': True}
+
+    dataset_name = model.Session.query(model.Package).filter(model.Package.id == id).first().name
+    return dataset_name
 def create_related_tags_table(context):
     if db.related_tags_table is None:
         db.init_db(context['model'])
-
+def dtsn():
+    dts_names = model.Session.query(model.Package).filter(model.Package.id != None).all();
+    result = []
+    for i in dts_names:
+        result.append(i.title)
+    logging.warning(result)
+    return result
 @ckan.logic.side_effect_free
 def new_related_tag(context, data_dict):
     create_related_tags_table(context)
@@ -102,8 +116,19 @@ class TagsController(base.BaseController):
         data_dict = {}
 
         status = base.request.params.get('type','waiting')
-
+        datasets =  base.request.params.get('datasets','').split("%2C")
+        c.dataset = ", ".join(datasets)
         tags = admin_list_tags(context, data_dict)
+        tgs2 = []
+        logging.warning(datasets)
+        logging.warning(len(datasets))
+        if len(datasets) > 0 and datasets[0] != "":
+            for i in datasets:
+                for j in tags:
+                    if i == dataset_name2(j.dataset_id):
+                        tgs2.append(j)
+            tags = tgs2[:]
+
         lng = len(tags)
         if len(status) > 0:
             if status not in ['waiting', 'accepted', 'declined']:
