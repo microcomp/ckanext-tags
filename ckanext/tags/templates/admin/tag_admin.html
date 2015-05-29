@@ -91,7 +91,7 @@
       <div class="control-group">
         <label for="field-type">{{ _('Filter by type') }}</label>
         <select id="field-type" name="type">
-          <option val='{{c.actual}}'>
+          <option value='{{c.actual}}'>
             {%if c.actual == "waiting"%}
               {{_("Waiting")}}
             {%elif c.actual == "accepted"%}
