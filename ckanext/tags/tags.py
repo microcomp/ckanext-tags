@@ -116,6 +116,8 @@ class TagsController(base.BaseController):
         data_dict = {}
 
         status = base.request.params.get('type','waiting')
+
+        c.actual = _(status)
         datasets =  base.request.params.get('datasets','').split("%2C")
         c.dataset = ", ".join(datasets)
         tags = admin_list_tags(context, data_dict)
@@ -129,7 +131,7 @@ class TagsController(base.BaseController):
                         tgs2.append(j)
             tags = tgs2[:]
 
-        lng = len(tags)
+        
         if len(status) > 0:
             if status not in ['waiting', 'accepted', 'declined']:
                 base.abort(400, (_('wrong filter type')))
@@ -141,10 +143,12 @@ class TagsController(base.BaseController):
 
         c.fulltext = base.request.params.get('search','')
         tags = [x for x in tags if c.fulltext in x.tag ]
+        lng = len(tags)
         c.page = page
         c.page_num = len(tags) // 10 +1
         c.pages =  [x for x in range(page-3, page+3) if x > 0 and x <= c.page_num]
         tags = tags[(page-1)*10:page*10]
+        
         c.content = {'tags':tags, 'filter': status, 'page': page, 'total': lng}
         return base.render('admin/tag_admin.html')
 
