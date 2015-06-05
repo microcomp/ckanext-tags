@@ -15,7 +15,7 @@ controller = 'ckanext.tags.tags:TagsController'
 class TagsPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IRoutes, inherit=True)
-    #plugins.implements(plugins.ITemplateHelpers, inherit=False)
+    plugins.implements(plugins.ITemplateHelpers, inherit=False)
     def update_config(self, config):
         toolkit.add_template_directory(config, 'templates')
         toolkit.add_public_directory(config, 'public')
@@ -27,4 +27,4 @@ class TagsPlugin(plugins.SingletonPlugin):
         map.connect('decline', '/tags/decline', action='decline', controller=controller)
         return map
     def get_helpers(self):
-    	return{'dataset_name': tags.dataset_name}
+    	return{'dts_n': tags.dtsn  }
