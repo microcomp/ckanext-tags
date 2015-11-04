@@ -27,7 +27,7 @@ hr.show { display: block; height: 1px;
     margin: 0em 0; padding: 0; }
 
 </style>
-
+{%if c.userobj %}
   <div>
     <hr class="show">
       <h3 style="text-align: right; font-size: 1.1em;"> <button   id='show_tag_form' class='mybutton' onclick="$('#show_tag_form').hide();$('#tag_form').show();">{{_('Recommend new tag')}} </button></h3>
@@ -50,4 +50,5 @@ hr.show { display: block; height: 1px;
     <button type='submit' value='submit' class='btn btn-primary'  >{{_('Insert')}}</button>
 </form>
 </noscript>
+{%endif%}
 {% endblock %}
